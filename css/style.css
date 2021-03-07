@@ -7,6 +7,7 @@ html, body {
     border: 0 none;
     overflow: hidden;
     font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    user-select: none;
 }
 
 .content {
@@ -68,7 +69,6 @@ header {
 .inputbox > button:active {
     color: #333;
     font-size: 1.1rem;
-
 }
 
 
@@ -115,6 +115,7 @@ header {
 .event .card-rank {
     color: #999;
 }
+
 @media screen and (max-width: 800px) {
     .content {
         width: 100%;
