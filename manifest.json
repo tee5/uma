@@ -1,0 +1,17 @@
+{
+    "name": "UmaMusume App",
+    "short_name": "UMA",
+    "theme_color": "#333333",
+    "background_color": "#2196f3",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/uma/",
+    "start_url": "/uma/index.html",
+    "icons": [
+        {
+            "src": "icon/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
