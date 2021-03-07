@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", e => {
-    document.querySelector(".inputbox > input[type=text]").addEventListener("keyup", e => {
+    document.querySelector(".inputbox > input[type=text]").addEventListener("input", e => {
         applyFilter(e.target.value);
         updateEventCounter();
     });
@@ -41,10 +41,11 @@ function createEventElement(event) {
     eventElement.querySelector(".card-type").textContent = event.card.type;
     eventElement.querySelector(".card-name").textContent = event.card.name;
     eventElement.querySelector(".card-rank").textContent = event.card.rank;
-    let fullText = event.title;
+    let texts = [event.card.name, event.title];
+    
     const tbody = eventElement.querySelector("table > tbody");
     event.options.forEach(option => {
-        fullText += option.text;
+        texts.push(option.text);
         const tr = document.createElement("tr");
         const th = document.createElement("th");
         th.textContent = option.text;
@@ -54,16 +55,18 @@ function createEventElement(event) {
         tr.appendChild(td);
         tbody.appendChild(tr);
     });
+    const fullText = texts.join("::");
     eventElement.querySelector(".fulltext").textContent = fullText;
     return eventElement;
 }
 
 function applyFilter(query) {
-    const patterns = query.replace(/[\s　]/g, " ").split(" ").map(word => new RegExp(word, "i"));
+    const patterns = query.replace(/(^\s+|\s+$)/g, "").replace(/[\s　]+/g, " ").split(" ").map(word => new RegExp(word, "i"));
+    console.log(patterns);
     const events = document.querySelectorAll(".event-list > .event");
     events.forEach(event => {
         const fullText = event.querySelector(".fulltext").textContent;
-        let matched = patterns.some(pattern => pattern.test(fullText));
+        let matched = patterns.every(pattern => pattern.test(fullText));
         if (matched) {
             event.classList.remove("hidden");
         } else {
