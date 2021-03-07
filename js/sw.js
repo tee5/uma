@@ -3,14 +3,14 @@ var CACHE_NAME  = "tee5/uma";
 
 //キャッシュするファイル名
 var urlsToCache = [
-    "/index.html",
-    "/js/main.js",
-    "/css/style.css",
-    "/data/events.json",
+    "/uma/index.html",
+    "/uma/js/main.js",
+    "/uma/css/style.css",
+    "/uma/data/events.json",
 ];
 
 //インストール時処理
-self.addEventListener('install', function(event) {
+self.addEventListener("install", event => {
     event.waitUntil(
         caches
         .open(CACHE_NAME)
@@ -19,11 +19,11 @@ self.addEventListener('install', function(event) {
 });
 
 // フェッチ時のキャッシュロード処理（2019/07/18 更新）
-self.addEventListener('fetch', function(event) {
+self.addEventListener("fetch", event => {
     event.respondWith(
         caches
         .match(event.request)
-        .then(function(response) {
+        .then(response => {
             if (response) {
                 return response;
             }
