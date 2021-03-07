@@ -5,7 +5,7 @@ var CACHE_NAME  = "tee5/uma";
 var urlsToCache = [
     "/index.html",
     "/js/main.js",
-    "/css/style.js",
+    "/css/style.css",
     "/data/events.json",
 ];
 
