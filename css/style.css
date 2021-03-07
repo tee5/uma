@@ -8,6 +8,7 @@ html, body {
     overflow: hidden;
     font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
     user-select: none;
+    background-color: #333;
 }
 
 .content {
@@ -29,14 +30,15 @@ header {
     top: 0;
     width: 640px;
     height: 80px;
-    background-color: #ccc;
+    background-color: #333;
     padding: 5px;
+    box-shadow: 0px 0px 8px 4px #333;
 }
 
 .inputbox {
     height: 40px;
     width: calc(100% - 10px);
-    background-color: #fff;
+    background-color: #ddd;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding-left: 4px;
@@ -71,6 +73,9 @@ header {
     font-size: 1.1rem;
 }
 
+.event-counter {
+    color: #999;
+}
 
 .hidden {
     display: none;
@@ -80,10 +85,13 @@ header {
 }
 
 .event {
-    background-color: #fff;
+    background-color: #ddd;
     margin-bottom: 0px;
     border: 1px solid #000;
+    border-radius: 4px;
     padding: 10px;
+    margin: 4px;
+
 }
 
 .event > h2 {
