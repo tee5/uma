@@ -44,7 +44,7 @@ def main():
                 if row[i]:
                     options.append({
                         "text": row[i],
-                        "result": row[i+1]
+                        "result": row[i+1].replace(",", " ")
                     })
             event["options"] = options
             events.append(event)
