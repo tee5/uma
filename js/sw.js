@@ -3,9 +3,9 @@ var CACHE_NAME  = "tee5/uma";
 
 //キャッシュするファイル名
 var urlsToCache = [
-    "/uma/index.html",
-    "/uma/js/main.js",
-    "/uma/css/style.js",
+    "/index.html",
+    "/js/main.js",
+    "/css/style.js",
     "/data/events.json",
 ];
 
