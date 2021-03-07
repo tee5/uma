@@ -3,7 +3,10 @@ var CACHE_NAME  = "tee5/uma";
 
 //キャッシュするファイル名
 var urlsToCache = [
-    "/tee5.github.io/uma/"
+    "/uma/index.html",
+    "/uma/js/main.js",
+    "/uma/css/style.js",
+    "/data/events.json",
 ];
 
 //インストール時処理
