@@ -110,6 +110,11 @@ header {
     padding: 10px;
 }
 
+.event td ul {
+    margin: 0;
+    padding-left: 15px;
+}
+
 .event .card-type,
 .event .card-name,
 .event .card-rank {

@@ -27,7 +27,6 @@ function initializeEventList(data) {
     const clone = eventListElement.cloneNode(false);
     eventListElement.parentNode.replaceChild(clone , eventListElement);
     eventListElement = document.querySelector(".event-list");
-
     data.forEach(event => {
         const eventElement = createEventElement(event);
         eventListElement.appendChild(eventElement);
@@ -51,7 +50,14 @@ function createEventElement(event) {
         th.textContent = option.text;
         tr.appendChild(th);
         const td = document.createElement("td");
-        td.innerHTML = option.result.replace(/\s/g, "<br>");
+        const ul = document.createElement("ul");
+        
+        option.result.split(" ").forEach(s => {
+            const li = document.createElement("li");
+            li.textContent = s;
+            ul.appendChild(li);
+        });
+        td.appendChild(ul);
         tr.appendChild(td);
         tbody.appendChild(tr);
     });
