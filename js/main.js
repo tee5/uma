@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", e => {
         e.target.parentNode.querySelector("input[type=text]").value = "";
         applyFilter("");
         updateEventCounter();
-
+        document.querySelector(".inputtext").focus();
     });
     initialize();
 });
@@ -19,6 +19,7 @@ function initialize() {
     .then(data => {
         initializeEventList(data);
     });
+    document.querySelector(".inputtext").focus();
 }
 
 function initializeEventList(data) {
